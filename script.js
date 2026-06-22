@@ -105,6 +105,8 @@ function getSafeOffset() {
   return { x, y };
 }
 function openMapPoint(el) {
+  closeAllModals();
+
   modalRoot.classList.add("active");
 
   const title = el.dataset.title;
