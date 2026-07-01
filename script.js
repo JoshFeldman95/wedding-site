@@ -35,18 +35,18 @@ form.addEventListener("submit", function (e) {
       if (result.result === "success") {
         // Reset and update UI upon success
         form.reset();
-        formResult.textContent = "Thank you! Your RSVP has been saved.";
+        formResult.textContent =
+          "Thank you! We can't wait to celebrate with you!";
         formResult.classList.remove("hidden");
-        formResult.style.color = "green";
       } else {
         throw new Error(result.error);
       }
     })
     .catch((error) => {
       console.error("Error!", error.message);
-      formResult.textContent = "Oops! Something went wrong. Please try again.";
+      formResult.textContent =
+        "Oops! Something went wrong :( Please text us your RSVP.";
       formResult.classList.remove("hidden");
-      formResult.style.color = "red";
     })
     .finally(() => {
       // Re-enable button

@@ -1,7 +1,7 @@
 :root {
-  --black: #1c1712;
-  --white: #fbf9f6;
-  --bg-color: #f5f6fa;
+  --black: #c85533;
+  --white: #ede7d4;
+  --navy: #0b3864;
 }
 
 * {
@@ -14,8 +14,13 @@ body {
   background-color: var(--white);
   color: var(--black);
 }
-input, select, textarea, button {
-  font-family: inherit;
+
+input,
+select,
+textarea,
+button {
+  font-family: "Cutive Mono", monospace;
+  color: var(--black);
 }
 
 /* Structural Layout */
@@ -48,6 +53,7 @@ form {
   padding: 1rem 0;
   border-radius: 12px;
 }
+
 .form-row {
   display: flex;
   align-items: center;
@@ -56,10 +62,9 @@ form {
   flex-wrap: wrap;
 }
 
-/* Aligns the button container to the right side */
 .button-row {
   margin-top: 2rem;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
 .form-row label,
@@ -94,7 +99,6 @@ input[type="text"] {
   padding-left: 20px;
 }
 
-/* Hide the browser's default radio button */
 .radio-container input {
   position: absolute;
   opacity: 0;
@@ -103,7 +107,6 @@ input[type="text"] {
   width: 0;
 }
 
-/* Create a custom box shape */
 .checkmark {
   height: 12px;
   width: 12px;
@@ -113,19 +116,16 @@ input[type="text"] {
   left: 0;
 }
 
-/* Create the checkmark indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
 .radio-container input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the custom checkmark (L-shape) */
 .radio-container .checkmark:after {
   left: 4px;
   top: -6px;
@@ -137,7 +137,7 @@ input[type="text"] {
 }
 
 /* RSVP Button Styling */
-/* Base Button Styling */
+
 #submit-btn {
   padding: 0.75rem 2rem;
   border: 2px solid var(--black);
@@ -145,30 +145,27 @@ input[type="text"] {
   background-color: transparent;
   color: var(--black);
   cursor: pointer;
-  font-family: "Cutive Mono", monospace;
+  font-family:  "Cutive Mono", monospace;
   font-size: 1rem;
   font-weight: bold;
   position: relative;
   transition: all 0.15s ease;
-  /* Prevent default mobile tap highlight color */
-  -webkit-tap-highlight-color: transparent; 
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* DESKTOP: Only apply hover effects if the device actually has a cursor */
 @media (hover: hover) {
   #submit-btn:hover {
     background-color: var(--white);
     box-shadow: 4px 4px 0px var(--black);
     transform: translate(-4px, -4px);
   }
-  
+
   #submit-btn:active {
     box-shadow: 0px 0px 0px var(--black);
     transform: translate(0, 0);
   }
 }
 
-/* MOBILE: Give an instant, satisfying feedback loop when tapped */
 @media (hover: none) {
   #submit-btn:active {
     background-color: var(--white);
@@ -184,21 +181,15 @@ input[type="text"] {
   margin-top: 3rem;
 }
 
-#map-placeholder {
-  height: 300px;
-  background-color: #ffffff;
-  border: 2px dashed #b9aea3;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #8c6a56;
-}
-
 /* Form feedback */
+
 #form-result {
   text-align: center;
   margin: 1rem;
+  color: var(--black);
+  font-family: "Ovo", serif;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .hidden {
@@ -213,7 +204,6 @@ input[type="text"] {
   overflow: hidden;
 }
 
-/* Make clickable points feel interactive */
 .map-point {
   cursor: pointer;
   transition: transform 0.15s ease;
@@ -232,6 +222,12 @@ input[type="text"] {
 #wedding-map path,
 #wedding-map line {
   stroke-linecap: round;
+  stroke: var(--black);
+  stroke-width: 1.5;
+}
+
+#wedding-map rect {
+  fill: var(--white);
 }
 
 /* Map Popup / Modal */
@@ -243,15 +239,12 @@ input[type="text"] {
   transform: translate(-50%, -50%);
   pointer-events: auto;
   transition: transform 0.2s ease;
-
-  /* Flat polaroid card */
   background: var(--white);
   max-width: 320px;
   width: 78vw;
   padding: 14px 14px 28px;
-  border: 1.5px solid var(--black);
+  border: 1.5px solid var(--navy);
   border-radius: 0;
-  /* box-shadow: 6px 6px 0px var(--black); */
 }
 
 .modal-content img {
@@ -259,7 +252,7 @@ input[type="text"] {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 1px solid var(--black);
+  border: 1px solid var(--navy);
 }
 
 .modal-content h3 {
@@ -271,7 +264,7 @@ input[type="text"] {
   font-family: "Cutive Mono", monospace;
   font-size: 0.95rem;
   text-align: center;
-  color: var(--black);
+  color: var(--navy);
 }
 
 .close-btn {
@@ -281,31 +274,30 @@ input[type="text"] {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 1.5px solid var(--black);
+  border: 1.5px solid var(--navy);
   background: var(--white);
-  color: var(--black);
+  color: var(--navy);
   font-size: 1.1rem;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  /* box-shadow: 3px 3px 0px var(--black); */
 }
 
 #modal {
   position: fixed;
   inset: 0;
-  pointer-events: none; /* never blocks the page underneath */
+  pointer-events: none;
 }
 
 #modal.active {
-  background: rgba(0, 0, 0, 0.35); /* dim only while a polaroid is open */
+  background: rgba(0, 0, 0, 0.35);
 }
+
 #modal.hidden {
   display: none;
 }
-
 
 #modal-image {
   width: 100%;

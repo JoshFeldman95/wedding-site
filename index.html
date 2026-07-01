@@ -24,7 +24,7 @@
       </section>
 
       <section id="date">
-        <p>5.15.2027</p>
+        <p>15.5.2027</p>
       </section>
 
       <form id="user-form">
@@ -64,7 +64,7 @@
           style="position: absolute; left: -9999px"
         />
         <div class="form-row button-row">
-          <button type="submit" id="submit-btn">Submit RSVP</button>
+          <button type="submit" id="submit-btn">Submit RSVP!</button>
         </div>
       </form>
 
@@ -73,76 +73,181 @@
         <div id="map-container">
           <svg id="wedding-map" viewBox="0 0 600 300" width="100%" height="300">
             <!-- Background -->
-            <rect width="600" height="300" fill="#fbf9f6" />
+            <rect width="600" height="300" />
 
-            <!-- A simple “path” line (story route) -->
-            <g opacity="0.35" stroke="#1c1712" stroke-width="1.2" fill="none">
+            <!-- vertical lines -->
+            <g fill="none">
               <path d="M 120 10 L 118 290" />
               <path d="M 320 10 L 318 290" />
               <path d="M 420 10 L 423 290" />
             </g>
 
             <!-- horizontal lines -->
-            <g opacity="0.25" stroke="#1c1712" stroke-width="1.2" fill="none">
+            <g fill="none">
               <path d="M 10 140 L 590 138" />
               <path d="M 10 200 L 590 203" />
             </g>
 
-            <!-- LOCATION 1: First date.-->
+            <!-- First apartment.-->
             <g
               class="map-point"
-              data-title=""
-              data-text="First Date."
-              data-image="https://images.unsplash.com/photo-1521017432531-fbd92d768814"
+              data-title="First apartment."
+              data-text="Our first apartment together (2017)"
+              data-image="img/first-apartment.jpeg"
               onclick="openMapPoint(this)"
             >
-              <text x="195" y="175" font-size="12" fill="#1c1712">💙</text>
+              <image
+                href="img/heart-navy.png"
+                x="187"
+                y="175"
+                width="32"
+                height="32"
+              />
             </g>
-            <!-- LOCATION 1: Where we met.-->
+            <!-- Baby Becca -->
             <g
               class="map-point"
-              data-title=""
-              data-text="Where we met."
-              data-image="https://images.unsplash.com/photo-1521017432531-fbd92d768814"
+              data-title="Baby Becca."
+              data-text="Where Becca grew up (1998)"
+              data-image="img/baby-becca.jpeg"
               onclick="openMapPoint(this)"
             >
-              <text x="185" y="135" font-size="12" fill="#1c1712">❤️</text>
+              <image
+                href="img/heart-orange.png"
+                x="150"
+                y="50"
+                width="32"
+                height="32"
+              />
             </g>
+            <!-- Baby Becca -->
             <g
               class="map-point"
-              data-title=""
-              data-text="Where we met."
-              data-image="https://images.unsplash.com/photo-1521017432531-fbd92d768814"
+              data-title="Baby Josh."
+              data-text="Where Josh grew up (1998)"
+              data-image="img/baby-josh.jpeg"
               onclick="openMapPoint(this)"
             >
-              <text x="305" y="115" font-size="12" fill="#1c1712">💛</text>
+              <image
+                href="img/heart-green.png"
+                x="250"
+                y="75"
+                width="32"
+                height="32"
+              />
             </g>
+            <!-- Prom -->
             <g
               class="map-point"
-              data-title=""
-              data-text="Speducci!"
-              data-image="https://images.unsplash.com/photo-1521017432531-fbd92d768814"
+              data-title="Prom"
+              data-text="Prom! (2013)"
+              data-image="img/prom.jpeg"
               onclick="openMapPoint(this)"
             >
-              <text x="305" y="415" font-size="12" fill="#1c1712">🧡</text>
+              <image
+                href="img/heart-pink.png"
+                x="350"
+                y="225"
+                width="32"
+                height="32"
+              />
             </g>
+            <!-- Will they, won't they? -->
             <g
               class="map-point"
-              data-title=""
-              data-text="Speducci!"
-              data-image="https://images.unsplash.com/photo-1521017432531-fbd92d768814"
+              data-title="Will they, won't they"
+              data-text="Will we, won't we? (House Island Day, 2010)"
+              data-image="img/house-island-day.jpeg"
               onclick="openMapPoint(this)"
             >
-              <text x="385" y="255" font-size="12" fill="#1c1712">💜</text>
+              <image
+                href="img/heart-green.png"
+                x="315"
+                y="260"
+                width="32"
+                height="32"
+              />
             </g>
+            <!-- They're in love! -->
             <g
               class="map-point"
-              data-title=""
-              data-text="Speducci!"
-              data-image="https://images.unsplash.com/photo-1521017432531-fbd92d768814"
+              data-title="In love"
+              data-text="We're in love! (2011)"
+              data-image="img/dating.jpeg"
               onclick="openMapPoint(this)"
             >
-              <text x="515" y="215" font-size="12" fill="#1c1712">💚</text>
+              <image
+                href="img/heart-orange.png"
+                x="315"
+                y="160"
+                width="32"
+                height="32"
+              />
+            </g>
+            <!-- First date -->
+            <g
+              class="map-point"
+              data-title="First date"
+              data-text="First significant Italian restaurant, Il Fornello - Our first date (2010)"
+              data-image="img/first-date.jpeg"
+              onclick="openMapPoint(this)"
+            >
+              <image
+                href="img/heart-navy.png"
+                x="345"
+                y="130"
+                width="32"
+                height="32"
+              />
+            </g>
+            <!-- Speducci -->
+            <g
+              class="map-point"
+              data-title="Speducci"
+              data-text="Second significant Italian restaurant, Speducci Mercatto - Our wedding venue! (2027) "
+              data-image="img/speducci.png"
+              onclick="openMapPoint(this)"
+            >
+              <image
+                href="img/heart-pink.png"
+                x="50"
+                y="50"
+                width="32"
+                height="32"
+              />
+            </g>
+            <!-- Speducci -->
+            <g
+              class="map-point"
+              data-title="first met"
+              data-text="What we looked like when we first met (2007) "
+              data-image="img/first-met.png"
+              onclick="openMapPoint(this)"
+            >
+              <image
+                href="img/heart-pink.png"
+                x="200"
+                y="140"
+                width="32"
+                height="32"
+              />
+            </g>
+
+            <!-- Getting engaged -->
+            <g
+              class="map-point"
+              data-title="Engaged"
+              data-text="Fifteen years later, we're engaged! (2025) "
+              data-image="img/engagement.jpeg"
+              onclick="openMapPoint(this)"
+            >
+              <image
+                href="img/heart-green.png"
+                x="150"
+                y="160"
+                width="32"
+                height="32"
+              />
             </g>
           </svg>
         </div>
