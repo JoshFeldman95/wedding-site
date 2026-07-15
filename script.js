@@ -143,3 +143,10 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".modal-content")) return; // clicked inside a card
   closeAllModals();
 });
+
+const INTRO_DURATION_MS = 4000; // set this to match your GIF's full playback length
+
+setTimeout(function () {
+  console.log("Fading out now!");
+  document.getElementById("preloader").classList.add("fade-out");
+}, INTRO_DURATION_MS);
