@@ -24,7 +24,7 @@ form.addEventListener("submit", function (e) {
   // Send data to Google Apps Script
   fetch(WEB_APP_URL, {
     method: "POST",
-    mode: "cors", // Handles cross-origin security
+    mode: "cors",
     headers: {
       "Content-Type": "text/plain;charset=utf-8",
     },
@@ -33,11 +33,20 @@ form.addEventListener("submit", function (e) {
     .then((response) => response.json())
     .then((result) => {
       if (result.result === "success") {
-        // Reset and update UI upon success
         form.reset();
-        formResult.textContent =
-          "Thank you! We can't wait to celebrate with you!";
         formResult.classList.remove("hidden");
+
+        if (data.choice === "yes") {
+          formResult.textContent =
+            "We’re so glad! Stay tuned for your formal invitation and more information in early 2027, and don’t hesitate to text us if you have any questions in the meantime.";
+        } else if (data.choice === "no") {
+          formResult.textContent =
+            "We understand but we will miss you! We would love to celebrate with you another time.";
+        } else if (data.choice === "maybe") {
+          formResult.textContent = "Our fingers are crossed - keep us posted!";
+        } else {
+          throw new Error("Invalid RSVP choice");
+        }
       } else {
         throw new Error(result.error);
       }
@@ -49,7 +58,6 @@ form.addEventListener("submit", function (e) {
       formResult.classList.remove("hidden");
     })
     .finally(() => {
-      // Re-enable button
       submitBtn.disabled = false;
       submitBtn.innerText = "Submit RSVP";
     });
