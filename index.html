@@ -76,44 +76,16 @@
         <div id="form-result" class="hidden"></div>
         <section id="map">
           <div id="map-container">
-            <svg
-              id="wedding-map"
-              viewBox="0 0 600 300"
-              width="100%"
-              height="300"
-            >
-              <!-- Background -->
-              <rect width="600" height="300" />
+            <svg id="wedding-map" viewBox="0 0 600 350" width="100%">
+              <image
+                href="img/toronto.png"
+                x="0"
+                y="0"
+                width="600"
+                height="350"
+                preserveAspectRatio="xMidYMid meet"
+              />
 
-              <!-- vertical lines -->
-              <g fill="none">
-                <path d="M 120 10 L 118 290" />
-                <path d="M 320 10 L 318 290" />
-                <path d="M 420 10 L 423 290" />
-              </g>
-
-              <!-- horizontal lines -->
-              <g fill="none">
-                <path d="M 10 140 L 590 138" />
-                <path d="M 10 200 L 590 203" />
-              </g>
-
-              <!-- First apartment.-->
-              <g
-                class="map-point"
-                data-title="First apartment."
-                data-text="Our first apartment together (2017)"
-                data-image="img/first-apartment.jpeg"
-                onclick="openMapPoint(this)"
-              >
-                <image
-                  href="img/heart-navy.png"
-                  x="187"
-                  y="175"
-                  width="32"
-                  height="32"
-                />
-              </g>
               <!-- Baby Becca -->
               <g
                 class="map-point"
@@ -123,14 +95,14 @@
                 onclick="openMapPoint(this)"
               >
                 <image
-                  href="img/heart-orange.png"
-                  x="150"
+                  href="img/heart-1.png"
+                  x="220"
                   y="50"
                   width="32"
                   height="32"
                 />
               </g>
-              <!-- Baby Becca -->
+              <!-- Baby Josh -->
               <g
                 class="map-point"
                 data-title="Baby Josh."
@@ -139,25 +111,25 @@
                 onclick="openMapPoint(this)"
               >
                 <image
-                  href="img/heart-green.png"
-                  x="250"
-                  y="75"
+                  href="img/heart-2.png"
+                  x="260"
+                  y="120"
                   width="32"
                   height="32"
                 />
               </g>
-              <!-- Prom -->
+              <!-- first met -->
               <g
                 class="map-point"
-                data-title="Prom"
-                data-text="Prom! (2013)"
-                data-image="img/prom.jpeg"
+                data-title="first met"
+                data-text="Where we met - and what we looked like when we did (2007) "
+                data-image="img/first-met.png"
                 onclick="openMapPoint(this)"
               >
                 <image
-                  href="img/heart-pink.png"
-                  x="350"
-                  y="225"
+                  href="img/heart-3.png"
+                  x="250"
+                  y="250"
                   width="32"
                   height="32"
                 />
@@ -166,30 +138,14 @@
               <g
                 class="map-point"
                 data-title="Will they, won't they"
-                data-text="Will we, won't we? (House Island Day, 2010)"
+                data-text="Where the sparks started to fly (House Island Day, 2010)"
                 data-image="img/house-island-day.jpeg"
                 onclick="openMapPoint(this)"
               >
                 <image
-                  href="img/heart-green.png"
-                  x="315"
-                  y="260"
-                  width="32"
-                  height="32"
-                />
-              </g>
-              <!-- They're in love! -->
-              <g
-                class="map-point"
-                data-title="In love"
-                data-text="We're in love! (2011)"
-                data-image="img/dating.jpeg"
-                onclick="openMapPoint(this)"
-              >
-                <image
-                  href="img/heart-orange.png"
-                  x="315"
-                  y="160"
+                  href="img/heart-4.png"
+                  x="260"
+                  y="320"
                   width="32"
                   height="32"
                 />
@@ -198,14 +154,78 @@
               <g
                 class="map-point"
                 data-title="First date"
-                data-text="First significant Italian restaurant, Il Fornello - Our first date (2010)"
+                data-text="Where we had our first date, aka the first significant Italian restaurant for our relationship (Il Fornello, 2010)"
                 data-image="img/first-date.jpeg"
                 onclick="openMapPoint(this)"
               >
                 <image
-                  href="img/heart-navy.png"
-                  x="345"
-                  y="130"
+                  href="img/heart-5.png"
+                  x="280"
+                  y="200"
+                  width="32"
+                  height="32"
+                />
+              </g>
+              <!-- They're in love! -->
+              <g
+                class="map-point"
+                data-title="In love"
+                data-text="Where we first said I love you (Queens Park, 2011)"
+                data-image="img/dating.jpeg"
+                onclick="openMapPoint(this)"
+              >
+                <image
+                  href="img/heart-6.png"
+                  x="270"
+                  y="260"
+                  width="32"
+                  height="32"
+                />
+              </g>
+              <!-- Prom -->
+              <g
+                class="map-point"
+                data-title="Prom"
+                data-text="Where we went to prom together (The King Edward Hotel, 2013)"
+                data-image="img/prom.jpeg"
+                onclick="openMapPoint(this)"
+              >
+                <image
+                  href="img/heart-7.png"
+                  x="300"
+                  y="310"
+                  width="32"
+                  height="32"
+                />
+              </g>
+              <!-- First apartment.-->
+              <g
+                class="map-point"
+                data-title="First apartment."
+                data-text="Our first apartment together (2017)"
+                data-image="img/first-apartment.jpeg"
+                onclick="openMapPoint(this)"
+              >
+                <image
+                  href="img/heart-8.png"
+                  x="240"
+                  y="290"
+                  width="32"
+                  height="32"
+                />
+              </g>
+              <!-- Getting engaged -->
+              <g
+                class="map-point"
+                data-title="Engaged"
+                data-text="Fifteen years later, we're engaged! (2025) "
+                data-image="img/engagement.jpeg"
+                onclick="openMapPoint(this)"
+              >
+                <image
+                  href="img/heart-9.png"
+                  x="220"
+                  y="260"
                   width="32"
                   height="32"
                 />
@@ -219,42 +239,9 @@
                 onclick="openMapPoint(this)"
               >
                 <image
-                  href="img/heart-pink.png"
-                  x="50"
+                  href="img/heart-10.png"
+                  x="170"
                   y="50"
-                  width="32"
-                  height="32"
-                />
-              </g>
-              <!-- Speducci -->
-              <g
-                class="map-point"
-                data-title="first met"
-                data-text="What we looked like when we first met (2007) "
-                data-image="img/first-met.png"
-                onclick="openMapPoint(this)"
-              >
-                <image
-                  href="img/heart-pink.png"
-                  x="200"
-                  y="140"
-                  width="32"
-                  height="32"
-                />
-              </g>
-
-              <!-- Getting engaged -->
-              <g
-                class="map-point"
-                data-title="Engaged"
-                data-text="Fifteen years later, we're engaged! (2025) "
-                data-image="img/engagement.jpeg"
-                onclick="openMapPoint(this)"
-              >
-                <image
-                  href="img/heart-green.png"
-                  x="150"
-                  y="160"
                   width="32"
                   height="32"
                 />

@@ -144,7 +144,8 @@ document.addEventListener("click", (e) => {
   closeAllModals();
 });
 
-const INTRO_DURATION_MS = 4000; // set this to match your GIF's full playback length
+// const INTRO_DURATION_MS = 4000; // set this to match your GIF's full playback length
+const INTRO_DURATION_MS = 0; // set this to match your GIF's full playback length
 
 setTimeout(function () {
   console.log("Fading out now!");
