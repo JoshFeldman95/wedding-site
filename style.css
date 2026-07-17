@@ -169,7 +169,6 @@ input[type="text"] {
   transition: all 0.15s ease;
   -webkit-tap-highlight-color: transparent;
   box-shadow: 4px 4px 0 var(--black);
-  transition: all 0.15s ease;
 }
 
 #submit-btn:hover {
@@ -240,16 +239,6 @@ svg {
   font-family: "Cutive Mono", monospace;
 }
 
-#wedding-map path,
-#wedding-map line {
-  stroke-linecap: round;
-  stroke: var(--black);
-  stroke-width: 1.5;
-}
-
-#wedding-map rect {
-  fill: var(--white);
-}
 
 
 .map-intro-text {

@@ -62,7 +62,7 @@ form.addEventListener("submit", function (e) {
     })
     .finally(() => {
       submitBtn.disabled = false;
-      submitBtn.innerText = "Submit RSVP";
+      submitBtn.innerText = "Submit RSVP!";
     });
 });
 
