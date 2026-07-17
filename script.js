@@ -1,8 +1,9 @@
 const WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbzGYjuN-OAhGlmhJU5NNGMiVkySFaKd1Ja-D95yM2UAAbYxwBtYQxeDJ6XODXIhptCLAA/exec"; // <-- Paste your Web App URL here
+  "https://script.google.com/macros/s/AKfycbzEBXH3QA-Ia_iOvpb3OHw_d75hgVtjFd7lS2kTlQORrHI9gGiSwzT3WedBQhCSkR20pQ/exec"; // <-- Paste your Web App URL here
 
 const form = document.getElementById("user-form");
 const submitBtn = document.getElementById("submit-btn");
+const submitRow = document.getElementById("submit-row");
 const formResult = document.getElementById("form-result");
 
 form.addEventListener("submit", function (e) {
@@ -16,6 +17,7 @@ form.addEventListener("submit", function (e) {
   const formData = new FormData(form);
   const data = {
     name: formData.get("name"),
+    address: formData.get("address"),
     choice: formData.get("choice"),
     token: "becca-josh-2027-xK9pL2", // must match SECRET_TOKEN in Code.gs
     website: formData.get("website"), // honeypot field, should always be empty
@@ -35,10 +37,11 @@ form.addEventListener("submit", function (e) {
       if (result.result === "success") {
         form.reset();
         formResult.classList.remove("hidden");
+        submitRow.classList.add("hidden");
 
         if (data.choice === "yes") {
           formResult.textContent =
-            "We’re so glad! Stay tuned for your formal invitation and more information in early 2027, and don’t hesitate to text us if you have any questions in the meantime.";
+            "We’re so glad! Stay tuned for invitations in early 2027, and please text if you have any questions.";
         } else if (data.choice === "no") {
           formResult.textContent =
             "We understand but we will miss you! We would love to celebrate with you another time.";
