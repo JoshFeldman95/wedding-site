@@ -155,9 +155,22 @@ document.addEventListener("click", (e) => {
   closeAllModals();
 });
 
-const INTRO_DURATION_MS = 4000; // set this to match your GIF's full playback length
+const video = document.querySelector("#preloader video");
+const preloader = document.getElementById("preloader");
 
+function fadeOut() {
+  preloader.classList.add("fade-out");
+}
+
+video.addEventListener("ended", fadeOut);
+
+// Also fade out immediately if the video fails to load at all
+video.addEventListener("error", fadeOut);
+
+// Fallback: only fires if the video still hasn't loaded/started by 8s
 setTimeout(function () {
-  console.log("Fading out now!");
-  document.getElementById("preloader").classList.add("fade-out");
-}, INTRO_DURATION_MS);
+  if (video.readyState < 3) {
+    console.log("Video didn't load in time, fading out as fallback.");
+    fadeOut();
+  }
+}, 5000);
