@@ -167,10 +167,15 @@ video.addEventListener("ended", fadeOut);
 // Also fade out immediately if the video fails to load at all
 video.addEventListener("error", fadeOut);
 
-// Fallback: only fires if the video still hasn't loaded/started by 8s
-setTimeout(function () {
-  if (video.readyState < 3) {
-    console.log("Video didn't load in time, fading out as fallback.");
-    fadeOut();
-  }
-}, 5000);
+// Register the service worker, which caches all the modal photos into
+// Cache Storage on first visit. Once cached, every later request for
+// those photos is served instantly with no network round-trip at all —
+// this is what actually fixes the slow modal-open problem, since GitHub
+// Pages doesn't let us set our own Cache-Control headers.
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("service-worker.js").catch(function (err) {
+      console.error("Service worker registration failed:", err);
+    });
+  });
+}
